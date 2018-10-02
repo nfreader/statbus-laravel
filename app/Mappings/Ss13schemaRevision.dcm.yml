@@ -1,0 +1,19 @@
+Ss13schemaRevision:
+    type: entity
+    table: ss13schema_revision
+    id:
+        major:
+            type: boolean
+            nullable: false
+            id: true
+        minor:
+            type: boolean
+            nullable: false
+            id: true
+    fields:
+        date:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+    lifecycleCallbacks: {  }

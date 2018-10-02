@@ -1,0 +1,32 @@
+Ss13adminRanks:
+    type: entity
+    table: ss13admin_ranks
+    id:
+        rank:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        flags:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: true
+        excludeFlags:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: true
+            column: exclude_flags
+        canEditFlags:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: true
+            column: can_edit_flags
+    lifecycleCallbacks: {  }

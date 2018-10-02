@@ -1,0 +1,32 @@
+Ss13ipintel:
+    type: entity
+    table: ss13ipintel
+    indexes:
+        idx_ipintel:
+            columns:
+                - ip
+                - intel
+                - date
+    id:
+        ip:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        date:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+        intel:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+    lifecycleCallbacks: {  }

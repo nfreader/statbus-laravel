@@ -1,0 +1,71 @@
+Ss13pollVote:
+    type: entity
+    table: ss13poll_vote
+    indexes:
+        idx_ss13poll_vote_ckey:
+            columns:
+                - ckey
+        idx_ss13poll_vote_optionid:
+            columns:
+                - optionid
+        idx_ss13poll_vote_pollid:
+            columns:
+                - pollid
+        idx_ss13poll_vote_ckey_pollid:
+            columns:
+                - ckey
+                - pollid
+        idx_pvote_pollid_ckey:
+            columns:
+                - pollid
+                - ckey
+        idx_pvote_optionid_ckey:
+            columns:
+                - optionid
+                - ckey
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        datetime:
+            type: datetime
+            nullable: false
+        pollid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        optionid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        ckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        ip:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+        adminrank:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        rating:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+    lifecycleCallbacks: {  }

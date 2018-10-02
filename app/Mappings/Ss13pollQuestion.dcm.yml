@@ -1,0 +1,94 @@
+Ss13pollQuestion:
+    type: entity
+    table: ss13poll_question
+    indexes:
+        idx_ss13poll_question_starttime:
+            columns:
+                - starttime
+        idx_ss13poll_question_endtime:
+            columns:
+                - endtime
+        idx_ss13poll_question_starttime_endtime:
+            columns:
+                - starttime
+                - endtime
+        idx_pquest_question_time_ckey:
+            columns:
+                - question
+                - starttime
+                - endtime
+                - createdby_ckey
+                - createdby_ip
+        idx_pquest_time_admin:
+            columns:
+                - starttime
+                - endtime
+                - adminonly
+        idx_pquest_id_time_type_admin:
+            columns:
+                - id
+                - starttime
+                - endtime
+                - polltype
+                - adminonly
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        polltype:
+            type: string
+            nullable: false
+            length: 0
+            options:
+                fixed: false
+        starttime:
+            type: datetime
+            nullable: false
+        endtime:
+            type: datetime
+            nullable: false
+        question:
+            type: string
+            nullable: false
+            length: 767
+            options:
+                fixed: false
+        adminonly:
+            type: boolean
+            nullable: false
+        multiplechoiceoptions:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        createdbyCkey:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: createdby_ckey
+        createdbyIp:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: createdby_ip
+        forTrialmin:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: for_trialmin
+        dontshow:
+            type: boolean
+            nullable: false
+    lifecycleCallbacks: {  }

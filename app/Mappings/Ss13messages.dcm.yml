@@ -1,0 +1,101 @@
+Ss13messages:
+    type: entity
+    table: ss13messages
+    indexes:
+        idx_msg_ckey_time:
+            columns:
+                - targetckey
+                - timestamp
+        idx_msg_type_ckeys_time:
+            columns:
+                - type
+                - targetckey
+                - adminckey
+                - timestamp
+        idx_msg_type_ckey_time_odr:
+            columns:
+                - type
+                - targetckey
+                - timestamp
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        type:
+            type: string
+            nullable: false
+            length: 0
+            options:
+                fixed: false
+        targetckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        adminckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        text:
+            type: string
+            nullable: false
+            length: 2048
+            options:
+                fixed: false
+        timestamp:
+            type: datetime
+            nullable: false
+        server:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+        serverIp:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: server_ip
+        serverPort:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: true
+            column: server_port
+        roundId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: round_id
+        secret:
+            type: boolean
+            nullable: false
+        lasteditor:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+        edits:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        deleted:
+            type: boolean
+            nullable: false
+            options:
+                default: '0'
+    lifecycleCallbacks: {  }

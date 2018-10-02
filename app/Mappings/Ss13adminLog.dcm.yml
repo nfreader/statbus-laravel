@@ -1,0 +1,52 @@
+Ss13adminLog:
+    type: entity
+    table: ss13admin_log
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        datetime:
+            type: datetime
+            nullable: false
+        roundId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: round_id
+        adminckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        adminip:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+        operation:
+            type: string
+            nullable: false
+            length: 0
+            options:
+                fixed: false
+        target:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        log:
+            type: string
+            nullable: false
+            length: 1000
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

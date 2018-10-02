@@ -1,0 +1,25 @@
+Ss13roleTime:
+    type: entity
+    table: ss13role_time
+    id:
+        ckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+            id: true
+        job:
+            type: string
+            nullable: false
+            length: 128
+            options:
+                fixed: false
+            id: true
+    fields:
+        minutes:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+    lifecycleCallbacks: {  }

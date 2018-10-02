@@ -1,0 +1,46 @@
+Ss13legacyPopulation:
+    type: entity
+    table: ss13legacy_population
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        playercount:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        admincount:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        time:
+            type: datetime
+            nullable: false
+        serverIp:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: server_ip
+        serverPort:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: true
+            column: server_port
+        roundId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: round_id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,46 @@
+Ss13feedback:
+    type: entity
+    table: ss13feedback
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        datetime:
+            type: datetime
+            nullable: false
+        roundId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: round_id
+        keyName:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+            column: key_name
+        keyType:
+            type: string
+            nullable: false
+            length: 0
+            options:
+                fixed: false
+            column: key_type
+        version:
+            type: boolean
+            nullable: false
+        json:
+            type: text
+            nullable: false
+            length: 0
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

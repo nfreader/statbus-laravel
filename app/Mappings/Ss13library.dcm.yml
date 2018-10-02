@@ -1,0 +1,75 @@
+Ss13library:
+    type: entity
+    table: ss13library
+    indexes:
+        deleted_idx:
+            columns:
+                - deleted
+        idx_lib_id_del:
+            columns:
+                - id
+                - deleted
+        idx_lib_del_title:
+            columns:
+                - deleted
+                - title
+        idx_lib_search:
+            columns:
+                - deleted
+                - author
+                - title
+                - category
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        author:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+        title:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+        content:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        category:
+            type: string
+            nullable: false
+            length: 0
+            options:
+                fixed: false
+        ckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+                default: LEGACY
+        datetime:
+            type: datetime
+            nullable: false
+        deleted:
+            type: boolean
+            nullable: true
+        roundIdCreated:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: round_id_created
+    lifecycleCallbacks: {  }

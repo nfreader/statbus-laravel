@@ -1,0 +1,58 @@
+Ss13ticket:
+    type: entity
+    table: ss13ticket
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        round:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+        ticket:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+        datetime:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+        ckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+                default: ''
+        content:
+            type: text
+            nullable: false
+            length: 0
+            options:
+                fixed: false
+        action:
+            type: string
+            nullable: true
+            length: 0
+            options:
+                fixed: false
+        ban:
+            type: integer
+            nullable: true
+            options:
+                unsigned: true
+        message:
+            type: integer
+            nullable: true
+            options:
+                unsigned: true
+    lifecycleCallbacks: {  }

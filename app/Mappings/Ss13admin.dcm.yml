@@ -1,0 +1,25 @@
+Ss13admin:
+    type: entity
+    table: ss13admin
+    indexes:
+        idx_ss13admin_ckey:
+            columns:
+                - ckey
+    id:
+        ckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        rank:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,62 @@
+Ss13connectionLog:
+    type: entity
+    table: ss13connection_log
+    indexes:
+        idx_ss13connection_log_ckey:
+            columns:
+                - ckey
+        idx_ss13connection_log_computerid:
+            columns:
+                - computerid
+        idx_ss13connection_log_datetime:
+            columns:
+                - datetime
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        datetime:
+            type: datetime
+            nullable: true
+        serverIp:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: server_ip
+        serverPort:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: true
+            column: server_port
+        roundId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: round_id
+        ckey:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        ip:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+        computerid:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

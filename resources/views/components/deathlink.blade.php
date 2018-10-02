@@ -1,0 +1,1 @@
+<a href="{{route('deaths.single', ['id'=>$death])}}"><i class="fas fa-user-times"></i> {{$death}}</a>

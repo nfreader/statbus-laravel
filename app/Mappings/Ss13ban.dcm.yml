@@ -1,0 +1,192 @@
+Ss13ban:
+    type: entity
+    table: ss13ban
+    indexes:
+        erro_ban_index_unbanned:
+            columns:
+                - unbanned
+        erro_ban_index_expiration_time:
+            columns:
+                - expiration_time
+        erro_ban_index_bantype:
+            columns:
+                - bantype
+        erro_ban_index_ckey:
+            columns:
+                - ckey
+        erro_ban_index_computerid:
+            columns:
+                - computerid
+        erro_ban_index_a_ckey:
+            columns:
+                - a_ckey
+        idx_ss13ban_bantime:
+            columns:
+                - bantime
+        idx_ban_checkban:
+            columns:
+                - ckey
+                - bantype
+                - expiration_time
+                - unbanned
+                - job
+        idx_ban_isbanned:
+            columns:
+                - ckey
+                - ip
+                - computerid
+                - bantype
+                - expiration_time
+                - unbanned
+        idx_ban_count:
+            columns:
+                - id
+                - a_ckey
+                - bantype
+                - expiration_time
+                - unbanned
+        idx_ss13ban_reason:
+            columns:
+                - reason
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        bantime:
+            type: datetime
+            nullable: false
+        serverIp:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: server_ip
+        serverPort:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: true
+            column: server_port
+        roundId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: round_id
+        bantype:
+            type: string
+            nullable: false
+            length: 0
+            options:
+                fixed: false
+        reason:
+            type: string
+            nullable: false
+            length: 2048
+            options:
+                fixed: false
+        job:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+        duration:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        expirationTime:
+            type: datetime
+            nullable: false
+            column: expiration_time
+        ckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        computerid:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+        ip:
+            type: integer
+            nullable: true
+            options:
+                unsigned: true
+        aCkey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+            column: a_ckey
+        aComputerid:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+            column: a_computerid
+        aIp:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: a_ip
+        who:
+            type: string
+            nullable: false
+            length: 2048
+            options:
+                fixed: false
+        adminwho:
+            type: string
+            nullable: false
+            length: 2048
+            options:
+                fixed: false
+        edits:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        unbanned:
+            type: boolean
+            nullable: true
+        unbannedDatetime:
+            type: datetime
+            nullable: true
+            column: unbanned_datetime
+        unbannedCkey:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: unbanned_ckey
+        unbannedComputerid:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: unbanned_computerid
+        unbannedIp:
+            type: integer
+            nullable: true
+            options:
+                unsigned: true
+            column: unbanned_ip
+    lifecycleCallbacks: {  }

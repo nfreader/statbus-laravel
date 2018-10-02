@@ -1,0 +1,61 @@
+Ss13pollTextreply:
+    type: entity
+    table: ss13poll_textreply
+    indexes:
+        idx_ss13poll_textreply_pollid:
+            columns:
+                - pollid
+        idx_ss13poll_textreply_ckey:
+            columns:
+                - ckey
+        idx_ss13poll_textreply_pollid_ckey:
+            columns:
+                - pollid
+                - ckey
+        idx_ptext_pollid_ckey:
+            columns:
+                - pollid
+                - ckey
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        datetime:
+            type: datetime
+            nullable: false
+        pollid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        ckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        ip:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+        replytext:
+            type: string
+            nullable: false
+            length: 2048
+            options:
+                fixed: false
+        adminrank:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+                default: Player
+    lifecycleCallbacks: {  }

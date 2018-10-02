@@ -1,0 +1,95 @@
+Ss13round:
+    type: entity
+    table: ss13round
+    indexes:
+        end_datetime:
+            columns:
+                - shutdown_datetime
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        initializeDatetime:
+            type: datetime
+            nullable: false
+            column: initialize_datetime
+        startDatetime:
+            type: datetime
+            nullable: true
+            column: start_datetime
+        shutdownDatetime:
+            type: datetime
+            nullable: true
+            column: shutdown_datetime
+        endDatetime:
+            type: datetime
+            nullable: true
+            column: end_datetime
+        serverIp:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: server_ip
+        serverPort:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: true
+            column: server_port
+        commitHash:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: true
+            column: commit_hash
+        gameMode:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: game_mode
+        gameModeResult:
+            type: string
+            nullable: true
+            length: 64
+            options:
+                fixed: false
+            column: game_mode_result
+        endState:
+            type: string
+            nullable: true
+            length: 64
+            options:
+                fixed: false
+            column: end_state
+        shuttleName:
+            type: string
+            nullable: true
+            length: 64
+            options:
+                fixed: false
+            column: shuttle_name
+        mapName:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+            column: map_name
+        stationName:
+            type: string
+            nullable: true
+            length: 80
+            options:
+                fixed: false
+            column: station_name
+    lifecycleCallbacks: {  }

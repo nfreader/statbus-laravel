@@ -1,0 +1,75 @@
+Ss13player:
+    type: entity
+    table: ss13player
+    indexes:
+        idx_ss13player_computerid:
+            columns:
+                - computerid
+        idx_ss13player_lastadminrank:
+            columns:
+                - lastadminrank
+        idx_player_cid_ckey:
+            columns:
+                - computerid
+                - ckey
+        idx_player_ip_ckey:
+            columns:
+                - ip
+                - ckey
+    id:
+        ckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        firstseen:
+            type: datetime
+            nullable: false
+        firstseenRoundId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: firstseen_round_id
+        lastseen:
+            type: datetime
+            nullable: false
+        lastseenRoundId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            column: lastseen_round_id
+        ip:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+        computerid:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        lastadminrank:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+                default: Player
+        accountjoindate:
+            type: date
+            nullable: true
+        flags:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+    lifecycleCallbacks: {  }

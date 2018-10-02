@@ -1,0 +1,46 @@
+Ss13roleTimeLog:
+    type: entity
+    table: ss13role_time_log
+    indexes:
+        ckey:
+            columns:
+                - ckey
+        job:
+            columns:
+                - job
+        datetime:
+            columns:
+                - datetime
+    id:
+        id:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        ckey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        job:
+            type: string
+            nullable: false
+            length: 128
+            options:
+                fixed: false
+        delta:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        datetime:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+    lifecycleCallbacks: {  }

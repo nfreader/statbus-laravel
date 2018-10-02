@@ -1,0 +1,1 @@
+<a href="{{route('rounds.id', ['id'=>$round])}}"><i class="fas fa-circle"></i> {{$round}}</a>
